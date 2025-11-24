@@ -28,26 +28,21 @@ body[data-theme="dark"] {
     color: #fff;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     z-index: 1000;
-}
-
-body[data-theme="dark"] .navbar {
-    background: #0d0d0d;
 }
 
 .logo {
     font-size: 26px;
     font-weight: bold;
-    color:#FF7A00;
+    color: #FF7A00;
 }
 
-/* nav links */
+/* nav-links default (desktop) */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
-
-    /* علشان تتحط يمين */
     margin-left: auto;
 }
 
@@ -56,13 +51,56 @@ body[data-theme="dark"] .navbar {
     color: #fff;
     font-size: 18px;
     transition: 0.3s;
-    scroll-behavior: smooth;
 }
-
 
 .nav-links li a:hover {
     color: #FF7A00;
 }
+
+/* hamburger */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    /* hide desktop menu */
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 18px;
+
+        display: none;
+        /* default hidden */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* DARK MODE */
+body[data-theme="dark"] .navbar {
+    background: #0d0d0d;
+}
+
 
 /* Theme Button */
 .theme-btn {
@@ -129,10 +167,39 @@ body[data-theme="dark"] .bio {
 }
 
 /* hero buttons */
+/* Default (Desktop) */
 .buttons {
     display: flex;
     gap: 15px;
 }
+
+/* Tablet */
+@media (max-width: 900px) {
+    .buttons {
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* لو مفيش مساحة يكسر سطر */
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        /* أزرار تحت بعض */
+        gap: 12px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 15px;
+    }
+}
+
 
 .btn {
     background: #000;
@@ -146,7 +213,8 @@ body[data-theme="dark"] .bio {
 
 .btn:hover {
     background: #FF7A00;
-    color: #fff; /* خلي النص أبيض على اللون البرتقالي */
+    color: #fff;
+    /* خلي النص أبيض على اللون البرتقالي */
 }
 
 
@@ -154,11 +222,11 @@ body[data-theme="dark"] .bio {
 .image-wrapper img {
     width: 360px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 body[data-theme="dark"] .image-wrapper img {
-    box-shadow: 0 4px 20px rgba(255,255,255,0.15);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
 }
 
 /* ===== GLOBAL SECTIONS ===== */
@@ -261,81 +329,110 @@ body[data-theme="dark"] .contact-form textarea {
 
 /* ===== SERVICES SECTION ===== */
 .services-section {
-    padding: 80px 7%;
+    padding: 100px 7%;
+    text-align: center;
 }
 
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0 auto 50px;
+    max-width: 550px;
+}
+
+body[data-theme="dark"] .section-subtitle {
+    color: #bbb;
+}
+
+/* Grid */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
-    margin-top: 30px;
 }
 
-/* البطاقة */
+/* Service Cards */
 .service-card {
-    background: #f2f2f2;
-    padding: 25px 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    cursor: default;
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.35s ease;
+    cursor: pointer;
+    border: 1px solid #f0f0f0;
 }
 
 body[data-theme="dark"] .service-card {
-    background: #222;
-    color: #fff;
+    background: #1c1c1c;
+    border-color: #333;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
 }
 
-/* رفع البطاقة عند Hover */
+/* Hover Effect */
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transform: translateY(-7px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
     background: #FF7A00;
-    color: #000;
-}
-
-body[data-theme="dark"] .service-card:hover {
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
     color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.4);
 }
 
-/* الأيقونة */
-.service-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-/* عنوان الخدمة */
+/* Titles & Text */
 .service-title {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 20px;
     font-weight: 700;
+    margin-bottom: 12px;
 }
 
-/* وصف الخدمة */
 .service-desc {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
-    color: #555;
+    color: #666;
 }
 
 body[data-theme="dark"] .service-desc {
     color: #ccc;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+/* Responsive */
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .services-section {
+        padding: 70px 6%;
     }
 }
 
 
+
 .project-card img {
-    width: 400px;       /* الصورة تمتد لعرض البطاقة بالكامل */
-    height: 400px;    
-    object-fit: contain; /* يحافظ على نسبة العرض/الارتفاع ويقص الأجزاء الزائدة */
-    border-radius: 20px 20px 0 0; /* يجعل أعلى البطاقة مستدير */
+    width: 400px;
+    /* الصورة تمتد لعرض البطاقة بالكامل */
+    height: 400px;
+    object-fit: contain;
+    /* يحافظ على نسبة العرض/الارتفاع ويقص الأجزاء الزائدة */
+    border-radius: 20px 20px 0 0;
+    /* يجعل أعلى البطاقة مستدير */
 }
 
 .projects-section {
@@ -365,7 +462,7 @@ body[data-theme="dark"] .project-card {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .project-title {
@@ -373,6 +470,7 @@ body[data-theme="dark"] .project-card {
     margin: 15px 0 5px;
     font-weight: 700;
 }
+
 .project-links {
     display: flex;
     justify-content: center;
@@ -467,20 +565,26 @@ body[data-theme="dark"] .contact-form textarea {
     color: #000;
 }
 
-.contactSection{
-       width: 100%;
-       height: 80px;
+.contactSection {
+    width: 100%;
+    height: 60px;
     padding: 15px 40px;
     background: #000;
     color: #fff;
-text-align: center;
-    font-size: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* توسيط أفقي */
+
+    font-size: 25px;
 
 }
 
+
 .contactSection p:hover {
     color: #FF7A00;
-        transition: 0.3s;
+    transition: 0.3s;
 
 }
 
@@ -519,6 +623,7 @@ body[data-theme="dark"] .footer {
 body[data-theme="dark"] .footer-links a {
     color: #ccc;
 }
+
 .footer-links {
     display: flex;
     justify-content: center;
@@ -539,11 +644,12 @@ body[data-theme="dark"] .footer-links a {
 body[data-theme="dark"] .social-icon {
     filter: brightness(0.8);
 }
+
 .contact-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .contact-card a {
@@ -555,27 +661,27 @@ body[data-theme="dark"] .social-icon {
 }
 
 .contact-card a:hover {
-    color:white;
+    color: white;
     transform: scale(1.05);
 
 }
 
 
 .contact-card {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(145deg, #FF7A00, #ffd699);
-    
+
 }
 
 body[data-theme="dark"] .contact-card:hover {
@@ -584,8 +690,8 @@ body[data-theme="dark"] .contact-card:hover {
 
 
 .contact-card .icon {
-  width: 40px;
-  margin-bottom: 10px;
+    width: 40px;
+    margin-bottom: 10px;
 }
 
 #scrollTopBtn {
@@ -597,12 +703,13 @@ body[data-theme="dark"] .contact-card:hover {
     border-radius: 50%;
     padding: 10px 10px;
     cursor: pointer;
-    display: none; /* يختفي في البداية */
+    display: none;
+    /* يختفي في البداية */
     transition: background 0.3s, transform 0.3s;
 }
 
-#scrollTopBtn img{
-     width: 30px;
+#scrollTopBtn img {
+    width: 30px;
     height: 30px;
 }
 

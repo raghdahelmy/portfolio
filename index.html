@@ -10,6 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!--Font Awesome -->
+
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -25,6 +32,7 @@
         <li><a href="#projects">My Projects</a></li>
         <li><a href="#contact">Contact Me</a></li>
       </ul>
+    <div class="hamburger">☰</div>
 
       <button id="themeToggle" class="theme-btn">🌙</button>
       <div class="orange-line"></div>
@@ -71,50 +79,62 @@
         />
       </div>
     </section>
+<!-- ===== SERVICES SECTION ===== -->
+<section id="services" class="services-section">
+  <h2 class="section-title">My Services</h2>
+  <p class="section-subtitle">
+    High-quality backend solutions built with clean architecture and modern practices.
+  </p>
 
-    <!-- ===== SERVICES SECTION ===== -->
-    <section id="services" class="services-section">
-      <h2 class="section-title">My Services</h2>
+  <div class="services-grid">
 
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div class="service-icon">🖥️</div>
-          <h3 class="service-title">Laravel API Development</h3>
-          <p class="service-desc">
-            Build secure and scalable RESTful APIs using Laravel.
-          </p>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card">
-          <div class="service-icon">🗄️</div>
-          <h3 class="service-title">Database Design</h3>
-          <p class="service-desc">
-            Design relational databases with optimized queries and ERD.
-          </p>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div class="service-icon">🔒</div>
-          <h3 class="service-title">Authentication Systems</h3>
-          <p class="service-desc">
-            Implement login, roles, permissions, and middleware-based access.
-          </p>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card">
-          <div class="service-icon">⚙️</div>
-          <h3 class="service-title">Backend Optimization</h3>
-          <p class="service-desc">
-            Improve performance, code quality, and scalability of backend
-            systems.
-          </p>
-        </div>
+    <!-- Service Item -->
+    <div class="service-card">
+      <div class="icon-wrapper">
+        <span class="service-icon"><i class="fa-solid fa-code-branch"></i>
+</span>
       </div>
-    </section>
+      <h3 class="service-title">Laravel API Development</h3>
+      <p class="service-desc">
+        Build secure, structured, and scalable REST APIs following best practices and clean code.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-wrapper">
+        <span class="service-icon"><i class="fa-solid fa-database"></i>
+</span>
+      </div>
+      <h3 class="service-title">Database Architecture</h3>
+      <p class="service-desc">
+        Design optimized relational databases with ERDs, indexing, and efficient query planning.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-wrapper">
+        <span class="service-icon"><i class="fa-solid fa-shield-halved"></i>
+</span>
+      </div>
+      <h3 class="service-title">Auth & Security Systems</h3>
+      <p class="service-desc">
+        Implement secure authentication, roles, permissions, JWT/Sanctum, and advanced middleware logic.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-wrapper">
+        <span class="service-icon"><i class="fa-solid fa-server"></i>
+</span>
+      </div>
+      <h3 class="service-title">Backend Optimization</h3>
+      <p class="service-desc">
+        Improve performance, refactor legacy code, and enhance API speed with caching & queues.
+      </p>
+    </div>
+
+  </div>
+</section>
 
     <!-- ===== PROJECTS SECTION ===== -->
     <section id="projects" class="projects-section">
@@ -123,12 +143,8 @@
       <div class="projects-grid">
         <!-- Project 1 -->
         <div class="project-card">
-          <img
-            class="img"
-            src="assets/Gemini_Generated_Image_cqk0bqcqk0bqcqk0.png"
-            alt="umq image"
-          />
-          <h3 class="project-title">UMQ Backend API</h3>
+       
+          <h3 class="project-title">UMQ Mobile App</h3>
           <p class="project-desc">
             "UMQ is a specialized application for selling diving products,
             renting yachts, and offering sea trips and diving lessons.
@@ -148,10 +164,7 @@
 
         <!-- Project 2 -->
         <div class="project-card">
-          <img
-            src="assets/Gemini_Generated_Image_14y41n14y41n14y4 (1).png"
-            alt="image"
-          />
+         
           <h3 class="project-title">Multi-Tenancy Multi-Database System</h3>
           <p class="project-desc">
             "A Laravel-based backend solution that supports multiple tenants
@@ -170,11 +183,8 @@
 
         <!-- Project 3 -->
         <div class="project-card">
-          <img
-            src="assets/Gemini_Generated_Image_uu99tmuu99tmuu99.png"
-            alt="Restaurant image"
-          />
-          <h3 class="project-title">Project Three</h3>
+         
+          <h3 class="project-title">Restaurant</h3>
           <p class="project-desc">
             "Developed a RESTful Restaurant Reservation API using Laravel with
             JWT authentication and role-based access control, enabling secure
@@ -304,19 +314,21 @@
 
     <script>
 
-      const toggle = document.getElementById("themeToggle");
-      const html = document.documentElement;
+    const toggle = document.getElementById("themeToggle");
+const body = document.body;
 
-      toggle.addEventListener("click", () => {
-        const currentTheme = html.getAttribute("data-theme");
-        if (currentTheme === "light") {
-          html.setAttribute("data-theme", "dark");
-          toggle.textContent = "☀️";
-        } else {
-          html.setAttribute("data-theme", "light");
-          toggle.textContent = "🌙";
-        }
-      });
+toggle.addEventListener("click", () => {
+  const currentTheme = body.getAttribute("data-theme");
+
+  if (currentTheme === "light") {
+    body.setAttribute("data-theme", "dark");
+    toggle.textContent = "☀️";
+  } else {
+    body.setAttribute("data-theme", "light");
+    toggle.textContent = "🌙";
+  }
+});
+
 
        const scrollBtn = document.getElementById("scrollTopBtn");
 
@@ -336,6 +348,13 @@
       behavior: "smooth"
     });
   });
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
     </script>
   </body>
 </html>
