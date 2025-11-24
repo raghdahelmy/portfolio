@@ -688,7 +688,14 @@ body[data-theme="dark"] .contact-card:hover {
     background: linear-gradient(145deg, #FF7A00, #ffb84d);
 }
 
-
+body[data-theme="dark"] .contact-card p,
+body[data-theme="dark"] .contact-card a {
+    color: #fff;
+}
+body[data-theme="dark"] .contact-card  {
+    background-color: #222;
+    color: #fff;
+}
 .contact-card .icon {
     width: 40px;
     margin-bottom: 10px;
@@ -727,3 +734,4 @@ body[data-theme="dark"] #scrollTopBtn:hover {
     background-color: #FF7A00;
     color: #fff;
 }
+
