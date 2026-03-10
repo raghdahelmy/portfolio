@@ -130,8 +130,8 @@ export const PHILOSOPHY = [
 export const EXPERIENCE = [
   {
     role: 'Backend Developer (PHP & Laravel)',
-    company: 'zh coding',
-    period: 'Aug 2025 - Present',
+    company: 'ZH Innovation - For Digital Solutions',
+    period: 'May 2025 - Present',
     location: 'Egypt',
     highlights: [
       'Optimized RESTful APIs, improving response times by 30%.',
