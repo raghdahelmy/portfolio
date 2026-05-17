@@ -16,7 +16,8 @@ import {
   X,
   ArrowRight,
   Download,
-  Zap
+  Zap,
+  Smartphone
 } from 'lucide-react';
 import { NAV_LINKS, SKILLS, PROJECTS, EXPERIENCE, EDUCATION, PHILOSOPHY } from './constants';
 
@@ -358,6 +359,16 @@ const Projects = () => {
                 {'liveLink' in project && project.liveLink && (
                   <a href={project.liveLink} target="_blank" className="p-4 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-2xl transition-all hover:scale-110 text-indigo-600 shadow-sm" title="Live Preview">
                     <ExternalLink className="w-7 h-7" />
+                  </a>
+                )}
+                {'androidLink' in project && project.androidLink && (
+                  <a href={project.androidLink} target="_blank" className="p-4 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-2xl transition-all hover:scale-110 text-indigo-600 shadow-sm" title="Play Store (Android)">
+                    <Smartphone className="w-7 h-7" />
+                  </a>
+                )}
+                {'iosLink' in project && project.iosLink && (
+                  <a href={project.iosLink} target="_blank" className="p-4 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-2xl transition-all hover:scale-110 text-indigo-600 shadow-sm" title="App Store (iOS)">
+                    <Smartphone className="w-7 h-7" />
                   </a>
                 )}
               </div>

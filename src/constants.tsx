@@ -76,6 +76,8 @@ export const PROJECTS = [
     description: 'Scalable backend for marine industry mobile app supporting e-commerce, rentals, and education.',
     tags: ['Laravel', 'REST API', 'FCM', 'EdfaPay'],
     link: 'https://github.com/raghdahelmy/UMQ-Backend',
+    androidLink: 'https://play.google.com/store/apps/details?id=umq.app.umq&hl=en',
+    iosLink: 'https://apps.apple.com/eg/app/umq/id6451067608',
     features: ['Multi-role architecture', 'Affiliate system', 'Real-time notifications']
   },
   {
