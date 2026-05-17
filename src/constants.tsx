@@ -49,6 +49,13 @@ export const SKILLS = [
 ];
 
 export const PROJECTS = [
+   {
+    title: 'LMS Backend Academy Platform',
+    description: 'Built a Learning Management System with a centralized Admin Dashboard for full platform control.',
+    tags: ['Laravel', 'MySQL', 'RESTful APIs'],
+    link: 'https://mohamedkamalcourses.netlify.app/',
+    features: ['Manual payment verification', 'Live & Recorded courses delivery', 'Automated student enrollment']
+  },
   {
     title: 'LegalERP',
     description: 'Multi-tenant SaaS platform for law firms with multi-vendor architecture and HR/Payroll engine.',
@@ -57,13 +64,7 @@ export const PROJECTS = [
     liveLink: 'https://law-erp-portfolio.netlify.app/',
     features: ['Multi-vendor structure', 'Automated payroll', 'Workflow automation']
   },
-  {
-    title: 'LMS Backend Academy Platform',
-    description: 'Built a Learning Management System with a centralized Admin Dashboard for full platform control.',
-    tags: ['Laravel', 'MySQL', 'RESTful APIs'],
-    link: 'https://mohamedkamalcourses.netlify.app/',
-    features: ['Manual payment verification', 'Live & Recorded courses delivery', 'Automated student enrollment']
-  },
+ 
   {
     title: 'PLAY PRO',
     description: 'Integrated sports booking, academy reservations, and e-commerce store with Paymob integration.',
@@ -80,19 +81,20 @@ export const PROJECTS = [
     iosLink: 'https://apps.apple.com/eg/app/umq/id6451067608',
     features: ['Multi-role architecture', 'Affiliate system', 'Real-time notifications']
   },
-  {
-    title: 'Academy ZH',
-    description: 'E-learning system backend with user signup, teacher dashboards, and course modules.',
-    tags: ['Laravel', 'JWT', 'Dashboard'],
-    link: 'https://github.com/raghdahelmy/Academy-courses-Api',
-    features: ['30% faster processing', 'Teacher dashboards', 'Secure auth']
-  },
+ 
   {
     title: 'Jewelry Souqna',
     description: 'Full-featured e-commerce jewelry store with user signup/sign-in and an admin dashboard.',
     tags: ['Laravel', 'E-commerce', 'Admin Panel'],
     link: 'https://jewelry.souqna-sa.com/',
     features: ['Product lifecycle management', '35% faster order handling', 'Role-based access']
+  },
+   {
+    title: 'Academy ZH',
+    description: 'E-learning system backend with user signup, teacher dashboards, and course modules.',
+    tags: ['Laravel', 'JWT', 'Dashboard'],
+    link: 'https://github.com/raghdahelmy/Academy-courses-Api',
+    features: ['30% faster processing', 'Teacher dashboards', 'Secure auth']
   },
   {
     title: 'Multi-Tenancy Multi-Database',
