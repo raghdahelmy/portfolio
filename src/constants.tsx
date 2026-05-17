@@ -50,18 +50,19 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
+    title: 'LegalERP',
+    description: 'Multi-tenant SaaS platform for law firms with multi-vendor architecture and HR/Payroll engine.',
+    tags: ['Laravel', 'MySQL', 'Multi-tenancy', 'RBAC'],
+    link: 'https://github.com/raghdahelmy/ERP-system-SaaS',
+    liveLink: 'https://law-erp-portfolio.netlify.app/',
+    features: ['Multi-vendor structure', 'Automated payroll', 'Workflow automation']
+  },
+  {
     title: 'LMS Backend Academy Platform',
     description: 'Built a Learning Management System with a centralized Admin Dashboard for full platform control.',
     tags: ['Laravel', 'MySQL', 'RESTful APIs'],
     link: 'https://mohamedkamalcourses.netlify.app/',
     features: ['Manual payment verification', 'Live & Recorded courses delivery', 'Automated student enrollment']
-  },
-  {
-    title: 'LegalERP',
-    description: 'Multi-tenant SaaS platform for law firms with multi-vendor architecture and HR/Payroll engine.',
-    tags: ['Laravel', 'MySQL', 'Multi-tenancy', 'RBAC'],
-    link: 'https://github.com/raghdahelmy/ERP-system-SaaS',
-    features: ['Multi-vendor structure', 'Automated payroll', 'Workflow automation']
   },
   {
     title: 'PLAY PRO',

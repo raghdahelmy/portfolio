@@ -351,9 +351,16 @@ const Projects = () => {
               <div className="p-12 flex-1 relative z-10">
                 <div className="flex justify-between items-start mb-10">
                   <h3 className="text-4xl font-black group-hover:text-indigo-600 transition-colors text-brand-heading tracking-tight">{project.title}</h3>
-                  <a href={project.link} target="_blank" className="p-4 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-2xl transition-all hover:scale-110 text-indigo-600 shadow-sm">
-                    <Github className="w-7 h-7" />
+              <div className="flex gap-3">
+                <a href={project.link} target="_blank" className="p-4 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-2xl transition-all hover:scale-110 text-indigo-600 shadow-sm" title={project.link.includes('github.com') ? "Source Code" : "Live Preview"}>
+                  {project.link.includes('github.com') ? <Github className="w-7 h-7" /> : <ExternalLink className="w-7 h-7" />}
+                </a>
+                {'liveLink' in project && project.liveLink && (
+                  <a href={project.liveLink} target="_blank" className="p-4 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-2xl transition-all hover:scale-110 text-indigo-600 shadow-sm" title="Live Preview">
+                    <ExternalLink className="w-7 h-7" />
                   </a>
+                )}
+              </div>
                 </div>
                 <p className="text-indigo-900/80 mb-10 leading-relaxed text-xl font-medium">
                   {project.description}
