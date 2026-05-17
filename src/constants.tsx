@@ -50,6 +50,13 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
+    title: 'LMS Backend Academy Platform',
+    description: 'Built a Learning Management System with a centralized Admin Dashboard for full platform control.',
+    tags: ['Laravel', 'MySQL', 'RESTful APIs'],
+    link: 'https://mohamedkamalcourses.netlify.app/',
+    features: ['Manual payment verification', 'Live & Recorded courses delivery', 'Automated student enrollment']
+  },
+  {
     title: 'LegalERP',
     description: 'Multi-tenant SaaS platform for law firms with multi-vendor architecture and HR/Payroll engine.',
     tags: ['Laravel', 'MySQL', 'Multi-tenancy', 'RBAC'],
@@ -130,8 +137,8 @@ export const PHILOSOPHY = [
 export const EXPERIENCE = [
   {
     role: 'Backend Developer (PHP & Laravel)',
-    company: 'ZH Innovation - For Digital Solutions',
-    period: 'May 2025 - Present',
+    company: 'zh coding',
+    period: 'Aug 2025 - Present',
     location: 'Egypt',
     highlights: [
       'Optimized RESTful APIs, improving response times by 30%.',
